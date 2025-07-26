@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>My Portfolio</title>
+ <style>
+ :root {
+ --bg-color: #1e1e1e;
+ --text-color: #b0b0b0;
+--accent-color: #7FDBFF; /* Soft sky blue */
+--font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+ margin: 0;
+padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ background-color: var(--bg-color);
+ color: var(--text-color);
+ font-family: var(--font-main);
+ line-height: 1.6;
+ padding: 2rem;
+ overflow-x: hidden;
+ position: relative;
+ }
+ .contact-info {
+  margin-top: 1rem;
+  font-size: 0.85srem;
+  color: #9aa9b8;
+  line-height: 1.4;
+  opacity: 0.8;
+  letter-spacing: 0.3px;
+}
+.contact-info a {
+  color: #7FDBFF;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+ canvas#bgCanvas {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100vw;
+ height: 100vh;
+ z-index: -1;
+ }
+
+ header {
+ text-align: center;
+ margin-bottom: 3rem;
+ }
+ header h1 {
+ font-size: 2.5rem;
+ color: var(--accent-color);
+ }
+ header p {
+ font-size: 1.2rem;
+ opacity: 0.7;
+ }
+
+ .section {
+ margin-bottom: 3rem;
+ padding: 1rem;
+ 
+}
+
+ .section h2 {
+ color: var(--accent-color);
+ margin-bottom: 1rem;
+ }
+
+ .project {
+ margin-bottom: 1rem;
+ }
+ .project-title {
+ font-weight: bold;
+ font-size: 1.1rem;
+ }
+
+ a {
+ color: var(--accent-color);
+ text-decoration: none;
+ }
+ a:hover {
+ text-decoration: underline;
+ }
+ footer {
+ text-align: center;
+ margin-top: 4rem;
+ font-size: 0.9rem;
+ opacity: 0.5;
+}
+</style>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cyro's Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Inter', sans-serif;
+}
+body {
+ background-color: #0d1117;
+ color: #c4cdd5;
+ overflow-x: hidden;
+}
+canvas {
+ position: fixed;
+top: 0;
+left: 0;
+ z-index: -1;
+}
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+header {
+ text-align: center;
+ padding: 4rem 1rem 2rem;
+}
+h1 {
+ font-size: 3rem;
+ margin-bottom: 0.5rem;
+ color: #7FDBFF;
+}
+p.subtitle {
+ font-size: 1.2rem;
+ color: #a3bfcf;
+}
+section {
+ padding: 4rem 2rem;
+ max-width: 800px;
+ margin: auto;
+}
+h2 {
+ font-size: 2rem;
+ margin-bottom: 1rem;
+ color: #7FDBFF;
+ position: relative;
+}
+h2::after {
+content: "";
+display: block;
+width: 0; /* start with no line */
+height: 3px;
+background-color: #7FDBFF;
+margin-top: 0.5rem;
+border-radius: 2px;
+transition: width 0.9s ease-in-out;
+transition-delay: 0.21s;
+transform-origin: left;
+}
+.section:hover h2::after {
+ width: 780px; /* or any width you prefer */
+}
+
+.section-content {
+ font-size: 1rem;
+ line-height: 1.6;
+}
+</style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+ <header data-aos="fade-down">
+ <h1>Hi, I'm Pranav</h1>
+ <p class="subtitle">Frontend Developer | JavaScript Enthusiast | Minimalist</p>
+ <div class="contact-info">
+    <p>Email: <a href="mailto:pranav@example.com">pranav@example.com</a></p>
+    <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+    <p>Location: Bengaluru, India</p>
+  </div>
+</header>
+
+<section class = "section" data-aos="fade-up">
+<h2>About Me</h2>
+<p class="section-content">
+ I'm a passionate frontend developer who loves crafting elegant user experiences with clean code. I believe in minimalist design and efficient interfaces.
+</p>
+</section>
+<section class = "section" data-aos="fade-up" data-aos-delay="100">
+<h2>Projects</h2>
+<p class="section-content">
+ From Java simulations to interactive data dashboards, I love building meaningful, efficient tools.
+</p>
+</section>
+<section class = "section" data-aos="fade-up" data-aos-delay="200">
+
+</section>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+ AOS.init();
+</script>
+
+ <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    
+    particles: {
+      number: {
+        value: 60,
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      },
+      color: {
+        value: "#88c0d0" // Soft bluish color
+      },
+      shape: {
+        type: "circle"
+      },
+      opacity: {
+        value: 0.3,
+        random: true
+      },
+      size: {
+        value: 3,
+        random: true
+      },
+      line_linked: {
+        enable: true,
+        distance: 120,
+        color: "#88c0d0",
+        opacity: 0.2,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 2,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false
+      }
+    },
+    interactivity: {
+  detect_on: "canvas",
+  events: {
+    onhover: {
+      enable: true,
+      mode: "repulse"  // ← change from "grab" to "repulse"
+    },
+    onclick: {
+      enable: true,
+      mode: "push"  // ← make clicking create particles
+    },
+    resize: true
+  },
+  modes: {
+    repulse: {
+      distance: 100,
+      duration: 0.4
+    },
+    push: {
+      particles_nb: 4
+    }
+  }
+},
+
+    retina_detect: true
+  });
+</script>
+
+</body>
+</html>
