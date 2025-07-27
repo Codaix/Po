@@ -44,10 +44,11 @@
 
 
     body {
-      background-color: var(--bg-color);
+      background-color: #0F172A;
       color: var(--text-color);
       overflow-x: hidden;
       padding: 3rem 6vw;
+      
     }
 
     #particles-js {
@@ -144,9 +145,6 @@ transition: transform 0.6s ease, letter-spacing 0.4s ease, opacity 0.3s ease;
 }
 
 
-
-
-    
 .main-container {
 display: flex;
 flex-direction: row;
@@ -175,7 +173,14 @@ margin-top: 8rem;
       object-fit: cover;
       filter: grayscale(100%);
       transition: filter 0.4s ease, transform 0.4s ease;
+
     }
+    /* 2. Custom cursor when hovering over profile picture */
+.profile-image:hover {
+cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='40' width='40'><text y='32' font-size='32'>✌️</text></svg>") 16 16, auto;
+
+}
+
     .profile-container:hover{
         transform: scale(1.03);
         box-shadow: 0 0 2px  #FAF9F6;
@@ -186,19 +191,19 @@ margin-top: 8rem;
 }
 
     .profile-info h1 {
-      font-size: 8.3rem;
+      font-size: 9.3rem;
       margin-bottom: 0.5rem;
       color: var(--accent-color);
     }
 
     .subtitle {
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: #a3bfcf;
       margin-bottom: 1.6rem;
     }
 
     .contact-info {
-      font-size: 1rem;
+      font-size: 1.5rem;
       line-height: 1.6;
     }
 
@@ -222,95 +227,136 @@ margin-top: 8rem;
       margin-bottom: 2rem;
 
     }
-    .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 24px; /* Space between the tiles */
-  justify-items: center;
-  padding: 20px;
-}
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr; /* One tile per row on small screens */
-  }
-}
-
-
-.project-card {
-  position: relative;
+    
+.project-card-wide {
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin-bottom: 2rem;
+  gap: 2rem;
+  height: 440px; /* ✅ Fixed height for all cards */
   overflow: hidden;
-  border-radius: 1rem;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  width: 500px;
-    height: 500px;
-    border-radius: 10px;
-    max-width:90%;
+  border-radius: 0;
+  
+}
+.bg-datasci,
+.bg-gravity,
+.bg-more{
+  background: rgba(48, 58, 72, 0.25); /* semi-transparent version of #303A48 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* for Safari */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+.project-card-wide:hover{
+  max-height: 600px;
 }
 
-.project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  border-radius: 1rem;
-}
 
-.project-card .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.project-card-wide img {
+  width: 40%;
   height: 100%;
-  background-color: rgba(13, 17, 23, 0.85);
-  color: #fff;
-  opacity: 0;
-  padding: 1rem;
+  object-fit: cover; /* ✅ Image fits frame perfectly */
+  display: block;
+  -webkit-mask-image: linear-gradient(to left, black 90%, transparent);
+  mask-image: linear-gradient(to left, black 90%, transparent);
+}
+.project-card-wide.bg-gravity img {
+  -webkit-mask-image: linear-gradient(to right, black 90%, transparent);
+  mask-image: linear-gradient(to right, black 90%, transparent);
+}
+.project-card-wide img:hover{
+  cursor: url('images/cursor-image-hover.png'), zoom-in;
+}
+.project-card-wide:hover img{
+  padding-bottom: 0%;
+  transition: all 1s ease;
+
+}
+
+.project-card-wide .text {
+  flex: 1;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  text-align: center;
-  transition: opacity 0.3s ease;
+  overflow: hidden;
+  position: relative;
 }
 
-.project-card:hover .overlay {
+.project-card-wide h3 {
+  color: #c4cdd5;
+  font-size: 4rem;
+  margin: 0 0 0.5rem 0;
+  transition: font-size 0.8s ease;
+  padding: 0;
+  align-self: flex-end;
+}
+.project-card-wide.bg-gravity h3 {
+  align-self: flex-start; /* ✅ Overrides the above for gravity card */
+}
+.project-card-wide .short-desc,
+.project-card-wide .full-desc {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: absolute;
+  top: 6rem; /* Adjust based on h3 height */
+  left: 1.5rem;
+  right: 1.5rem;
+}
+
+.project-card-wide .short-desc {
+  color: #444;
   opacity: 1;
+  transform: translateY(0);
+  margin-top:5rem;
+  align-self:flex-end;
 }
 
-.project-card h3 a {
-  color: #fff;
+.project-card-wide a {
+  margin-top: auto;
+  font-size: 1.8rem;
+  color: #007bff;
   text-decoration: none;
-  font-size: 1.25rem;
-  font-weight: 600;
+  padding-top: 1rem;
+}
+.padding-card-wide:hover a{
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.project-card p {
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
-  color: #ccc;
+.project-card-wide:hover .short-desc {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
-/* Special Styling for Coming Soon */
-.project-card.coming-soon {
-  background: repeating-linear-gradient(
-    45deg,
-    #1a1a1a,
-    #1a1a1a 10px,
-    #222 10px,
-    #222 20px
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 500px;
+
+.project-card-wide .full-desc {
+  color: #555;
+  opacity: 0;
+  transform: translateY(10px);
+  margin-top:5rem;
+
 }
 
-.project-card.coming-soon .overlay {
-  background-color: rgba(13, 17, 23, 0.95);
+.project-card-wide:hover .full-desc {
   opacity: 1;
+  font-size: 1.5rem;
+  transform: translateY(0);
+  margin-top:5rem;
+
 }
+
+
+.project-card-wide:hover h3 {
+  font-size: 2.5rem;
+}
+
 
     .skills-wheel {
  padding: 3rem 4rem;
@@ -320,7 +366,7 @@ margin-top: 8rem;
  overflow: hidden;
  position: relative;
  width: 100%;
- margin-bottom: 8rem;
+ margin-bottom: 20rem;
 }
 
 
@@ -351,11 +397,11 @@ margin-top: 8rem;
  }
 }
 
-
     section {
       padding: 3rem 2rem;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
+      padding-top: 10rem;
       padding-left: 4rem;
       padding-right: 4rem;
     }
@@ -363,11 +409,88 @@ margin-top: 8rem;
   color: #FAF9F6; /* bright cyan or any accent color */
   font-weight: 600;
 }
+.custom-belt {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background: transparent;
+  padding: 10px 0;
+}
+
+.belt-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+.connect-section {
+  text-align: center;
+  padding: 5rem 2rem;
+  position: relative; /* or your custom theme */
+}
+
+.connect-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.connect-title span {
+  color: #ff6600;
+}
+
+.character-social-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+}
+
+.hoverboard-boy-container {
+  position: relative;
+}
+
+.hoverboard-boy {
+  width: 150px;
+  height: auto;
+  margin-top: 1rem;
+}
 
 
+.block {
+  width: 14px;
+  height: 24px;
+  border-radius: 3px;
+}
+
+.block.c1 { background-color: #4F46E5; }
+.block.c2 { background-color: #2EE6D6; }
+.block.c3 { background-color: #FF3B6F; }
     h2 {
-      font-size: 5rem;
-      margin-bottom: 1.2rem;
+      font-size:6rem;
+      margin-bottom: 2.2rem;
       color: var(--accent-color);
       position: relative;
       text-align: left;
@@ -394,6 +517,25 @@ margin-top: 8rem;
       font-size: 1rem;
       line-height: 1.6;
     }
+    #cursor-label {
+ position: fixed;
+ pointer-events: none;
+ opacity: 0;
+ transition: opacity 0.2s ease;
+ font-size: 1rem;
+ font-weight: 500;
+ color: #fff;
+ background-color: #2b2b45;
+ padding: 12px 16px;
+ border-radius: 12px;
+ z-index: 1000;
+ font-family: "Poppins", sans-serif;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+ max-width: 220px;
+ margin-top: 12px; /* pushes it down from the cursor */
+}
+
+
   </style>
 </head>
 <body>
@@ -402,7 +544,7 @@ margin-top: 8rem;
     <a href="#projects">Projects</a>
  <a href="#certificates">Certificates</a>
  <a href="#about">About Me</a>
-  <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+  <a href="https://github.com/Codaix" target="_blank">GitHub</a>
  <a href="resume.pdf" class="resume-btn" target="_blank">Resume</a>
 </div>
 
@@ -419,9 +561,10 @@ margin-top: 8rem;
 
 
   <!-- Profile Section -->
+
 <div class="main-container" data-aos="fade-up">
  <div class="profile-container">
-    <img src="your-image.jpg" alt="Profile" class="profile-image" />
+    <img src="images\WhatsApp Image 2025-07-27 at 19.30.54.jpeg" alt="Profile" class="profile-image" />
  </div>
  <div class="profile-info">
   <h1>Hi, I'm Pranav</h1>
@@ -432,6 +575,7 @@ margin-top: 8rem;
   </div>
  </div>
 </div>
+
 
 
   <!-- About Me -->
@@ -488,6 +632,28 @@ margin-top: 8rem;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-plain.svg" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-plain.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-plain.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" />
 
 </div>
 
@@ -497,67 +663,111 @@ margin-top: 8rem;
 </section>
 
 
+<!-- Divider Line -->
+
+
+
+
   <!-- Projects Section -->
-  <section id="projects" class="section" data-aos="fade-up">
-  <h2>Projects</h2>
   <p class="section-content">
   </p>
 
-  <div class="projects-grid">
-    <!-- Project 1 -->
-    <div class="project-card">
-      <img src="images/project1.jpg" alt="Project 1">
-      <div class="overlay">
-        <h3><a href="https://example.com/project1" target="_blank">Project Title 1</a></h3>
-        <p>Short description of project 1.</p>
-      </div>
-    </div>
-
-    <!-- Project 2 --> 
-    <div class="project-card">
-      <img src="images/project2.jpg" alt="Project 2">
-      <div class="overlay">
-        <h3><a href="https://example.com/project2" target="_blank">Project Title 2</a></h3>
-        <p>What this project solves, in a line or two.</p>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card">
-      <img src="images/project3.jpg" alt="Project 3">
-      <div class="overlay">
-        <h3><a href="https://example.com/project3" target="_blank">Project Title 3</a></h3>
-        <p>React or JS-based tool. Say something unique.</p>
-      </div>
-    </div>
-
-    <!-- Incoming Project -->
-    <div class="project-card coming-soon">
-      <div class="overlay">
-        <h3>🚧 New Project Incoming...</h3>
-        <p>Stay tuned for my next build!</p>
-      </div>
-    </div>
+  <!-- Data Science Wide Card -->
+<div class="project-card-wide bg-datasci">
+  <div class="text">
+    <h3>Data Science</h3>
+    <p class="short-desc">A collection of ML and AI-based solutions.</p>
+    <p class="full-desc">
+      Projects include house price prediction, customer segmentation, classification, and time-series analysis using Python, Pandas, Scikit-learn, and more.
+    </p>
+    <a href="https://github.com/Codaix/Data_Science_Projects/tree/main" target="_blank" class="project-link">View Projects →</a>
   </div>
+    <img src="images\DataScience.jpg" alt="Data Science Projects">
+  </div>
+</div>
+
+<!-- Gravity Simulation Project -->
+<div class="project-card-wide bg-gravity">
+  <img src="images/gravity.jpg" alt="Gravity Simulation Project Image">
+
+  <div class="text">
+    <h3>Gravity Simulation</h3>
+    <p class="short-desc">A real-time particle simulation using LWJGL to visualize basic gravitational interactions in 3D space.</p>
+    <p class="full-desc">Built using the Lightweight Java Game Library (LWJGL), this simulation models gravitational forces between multiple particles in a dynamic, interactive space. Designed to explore fundamental physics visually.</p>
+    <a href="https://github.com/Codaix/LW_JGL_Project" target="_blank" class="project-link">← Check It</a>
+  </div>
+  </div>
+
+<!-- More Projects Redirect -->
+<div class="project-card-wide bg-more">
+  <div class="text">
+    <h3>More Works</h3>
+    <p class="short-desc">Explore additional Java-based tools including a Dice Simulator, Event Reminder App, and more.</p>
+    <p class="full-desc">These projects demonstrate object-oriented programming, UI interaction, and logic building using core Java. Simple yet functional applications designed for learning and utility.</p>
+    <a href="https://github.com/Codaix/Core-Java-Projects" target="_blank" class="project-link">Unveil →</a>
+  </div>
+  <img src="images\glenn-carstens-peters-P1qyEf1g0HU-unsplash.jpg" alt="More Projects Preview">
+</div>
+
+
 </section>
 
     <section id="certificates" class="section" data-aos="fade-up">
-      <h2>Certificates</h2>
+      <h2>Achievements</h2>
       <p class="section-content">
         I have completed various courses and certifications to enhance my skills in web development and programming.
       </p>
       <ul>
-        <li><a href="https://example.com/certificate1" target="_blank">Certificate in Frontend Development</a></li>
         <li><a href="https://example.com/certificate2" target="_blank">Java Programming Certification</a></li>
-        <li><a href="https://example.com/certificate3" target="_blank">Python for Data Science</a></li>
+        <li><a href="https://example.com/certificate2" target="_blank">Java DSA Certification</a></li>
       </ul>
       </section>
+      <section id="learning" class="section" data-aos="fade-up">
+ <h2>Currently Exploring</h2>
+ <ul>
+  <li>System Design Principles (Scalability & Architecture)</li>
+  <li>Open Source Contribution - Preparing for Hacktoberfest</li>
+  <li>Advanced Java (JDBC, Threads, JavaFX)</li>
+ </ul>
+</section>
+<section id="blogs" class="section" data-aos="fade-up">
+ <h2>Writings & Blogs</h2>
+ <ul>
+  <li><a href="#" target="_blank">Why I Chose LWJGL for a Physics Simulation</a></li>
+  <li><a href="#" target="_blank">My Java DSA Journey - What Helped Me Most</a></li>
+ </ul>
+</section>
+
       <section id="about" class="section" data-aos="fade-up">
         <h2>About Me</h2>
         <p class="section-content">
           I am a frontend developer with a passion for creating clean, efficient, and user-friendly web applications. I enjoy learning new technologies and continuously improving my skills.
         </p>
   </section>
+
+
+  <section id="connect" class="connect-section">
+  <h2 class="connect-title">Coffee? <span>Code?</span> Collab?</h2>
+  
+  <div class="character-social-container">
+    <!-- Social icons around -->
+    <div class="social-icons">
+      <a href="https://linkedin.com" target="_blank"><img src="icons/linkedin.svg" alt="LinkedIn" /></a>
+      <a href="https://x.com" target="_blank"><img src="icons/twitter.svg" alt="X (Twitter)" /></a>
+      <a href="https://stackoverflow.com" target="_blank"><img src="icons/stackoverflow.svg" alt="StackOverflow" /></a>
+      <a href="https://hackerrank.com" target="_blank"><img src="icons/hackerrank.svg" alt="HackerRank" /></a>
+      <a href="https://reddit.com" target="_blank"><img src="icons/reddit.svg" alt="Reddit" /></a>
+      <a href="https://discord.com" target="_blank"><img src="icons/discord.svg" alt="Discord" /></a>
+    </div>
+
+    <!-- Character in the center -->
+    <div class="hoverboard-boy-container">
+      <img src="images\boyIcon.png" alt="Boy on hoverboard" class="hoverboard-boy" />
+    </div>
+  </div>
+</section>
+
+
   <button id="goUpBtn" aria-label="Go to Top">
   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24">
     <path d="M18 15L12 9L6 15" stroke-linecap="round" stroke-linejoin="round"/>
@@ -627,7 +837,39 @@ margin-top: 8rem;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
+<script>
+  window.onload = () => {
+const profilePic = document.querySelector('.profile-image');
+const cursorLabel = document.getElementById('cursor-label');
 
+profilePic.addEventListener('mouseenter', () => {
+  cursorLabel.style.opacity = 1;
+});
 
+profilePic.addEventListener('mouseleave', () => {
+  cursorLabel.style.opacity = 0;
+});
+
+profilePic.addEventListener('mousemove', (e) => {
+  cursorLabel.style.left = e.clientX + 20 + 'px';
+  cursorLabel.style.top = e.clientY + 20 + 'px';
+});
+  };
+</script>
+ 
 </body>
 </html>
+
+<!--
+1. Remove the boy..
+2. make the social networking apps more interactive
+3. coffee code collab should be in middle
+4. the skill-wheel should be replaced by a more aesthetic and cleaner 
+version of showcasing the skills
+5. Get  better font styles
+6. Add achievements and currently exploring areas.
+7. modify the writing and blog section
+8. update the buttons
+9. get a resume
+10. clean the code
+-->
