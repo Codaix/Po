@@ -8,8 +8,12 @@
   <!-- Fonts & AOS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Roboto+Mono&family=Pacifico&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+  font-family: 'VeganStyle';
+  src: url('fonts/VeganStylePersonalUse-5Y58.ttf') format('truetype');
+}
     :root {
       --bg-color: #0d1117;
       --text-color: #c4cdd5;
@@ -44,7 +48,7 @@
 
 
     body {
-      background-color: #0F172A;
+      background-color: #101010;
       color: var(--text-color);
       overflow-x: hidden;
       padding: 3rem 6vw;
@@ -89,7 +93,7 @@
  font-weight: bold;
  border-radius: 999px;
  padding: 0.6rem 1.5rem;
- box-shadow: 0 0 10px #5b5ff3aa;
+ box-shadow: 0 0 10px #1e2041aa;
 }
 
 .resume-btn:hover {
@@ -109,19 +113,6 @@
  font-family: 'Inter', sans-serif;
  color: #fff;
  z-index: 999;
-}
-
-.block {
- width: 2.2rem;
-height: 2.2rem;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 6px;
-background-color: rgba(255, 255, 255, 0.05);
-border: 1px solid rgba(255, 255, 255, 0.15);
-transition: transform 0.6s ease, letter-spacing 0.4s ease, opacity 0.3s ease;
- transform-style: preserve-3d;
 }
 
 .letter-p {
@@ -153,8 +144,9 @@ justify-content: center;
 text-align: left;
 gap: 2rem;
 flex-wrap: wrap;
-margin: 5rem auto;
-margin-top: 8rem;
+margin: 0rem auto;
+margin-top: 15rem;
+margin-bottom: 10rem;
 }
 
     .profile-container {
@@ -191,9 +183,12 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 }
 
     .profile-info h1 {
-      font-size: 9.3rem;
-      margin-bottom: 0.5rem;
+      font-size: 10.5rem;
+      margin-bottom: 1.5rem;
       color: var(--accent-color);
+    }
+    #hiText span{
+        transition: font-family 0.2s ease-in-out, transform 0.1s ease;
     }
 
     .subtitle {
@@ -216,10 +211,11 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
       text-decoration: underline;
     }
 
+
     .about-me {
       max-width: 900px;
       margin: 1rem auto 4rem;
-      font-size: 2.25rem;
+      font-size: 2.29rem;
       line-height: 1.7;
       color: gray;
       text-align: left;
@@ -227,7 +223,124 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
       margin-bottom: 2rem;
 
     }
-    
+
+    .scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-5%);
+  font-size: 2rem;
+  color: #fff;
+  animation: bounce 2s infinite;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.scroll-down span {
+  display: inline-block;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+.toolbox-title {
+  text-align: center;
+  font-family: 'VeganStyle', cursive;
+  font-size: 6rem;
+  margin: 2rem;
+  margin-top:25rem;
+}
+    #skills {
+  background: #0111;
+  color: #fff;
+  padding: 0px ;
+  padding-bottom: 150px;
+  text-align: center;
+  margin:100px;
+  margin-top:0rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #ffc107;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  
+}
+
+.skill {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.6s ease;
+  border: 4px double grey;
+  opacity: 0;
+  transform: translateY(20px);
+  
+}
+.skill.in-view{
+  opacity: 1;
+  transform: translateY(0);
+  animation:floatUpDown 2.5s ease-in-out infinite;
+
+}
+/* Staggered delays */
+.skill:nth-child(1).in-view  { transition-delay: 0s; animation-delay: 0s; }
+.skill:nth-child(2).in-view  { transition-delay: 0.2s; animation-delay:0.2s; }
+.skill:nth-child(3).in-view  { transition-delay: 0.4s; animation-delay:0.4s; }
+.skill:nth-child(4).in-view  { transition-delay: 0.6s; animation-delay:0.6s; }
+.skill:nth-child(5).in-view  { transition-delay: 0.8s; animation-delay:0.8s; }
+.skill:nth-child(6).in-view  { transition-delay: 1.0s; animation-delay:1.0s; }
+.skill:nth-child(7).in-view  { transition-delay: 1.2s; animation-delay:1.2s; }
+.skill:nth-child(8).in-view  { transition-delay: 1.4s; animation-delay:1.4s; }
+.skill:nth-child(9).in-view  { transition-delay: 1.6s; animation-delay:1.6s; }
+.skill:nth-child(10).in-view { transition-delay: 1.8s; animation-delay:1.8s; }
+.skill:nth-child(11).in-view { transition-delay: 2.0s; animation-delay:2.0s; }
+
+/*@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  15%  { transform: translateY(-2px); }
+  30%  { transform: translateY(-3.5px); }
+  50%  { transform: translateY(-5px); }
+  70%  { transform: translateY(-3.5px); }
+  85%  { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}*/
+
+.skill img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.skill span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+}
 .project-card-wide {
   display: flex;
   align-items: stretch;
@@ -358,44 +471,6 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 }
 
 
-    .skills-wheel {
- padding: 3rem 4rem;
-}
-
-.wheel-container {
- overflow: hidden;
- position: relative;
- width: 100%;
- margin-bottom: 20rem;
-}
-
-
-.wheel-track {
- display: flex;
- gap: 3rem;
- min-width: 200%; /* Enough width to allow looping */
- animation: scrollWheel 50s linear infinite;
-}
-
-
-.wheel-track img {
- height: 60px;
- transition: transform 0.3s ease;
- flex-shrink: 0;
-}
-
-.wheel-track img:hover {
- transform: scale(1.2);
-}
-
-@keyframes scrollWheel {
-     0% {
- transform: translateX(0);
-}
-100% {
- transform: translateX(-50%);
- }
-}
 
     section {
       padding: 3rem 2rem;
@@ -409,27 +484,12 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
   color: #FAF9F6; /* bright cyan or any accent color */
   font-weight: 600;
 }
-.custom-belt {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  background: transparent;
-  padding: 10px 0;
-}
-
-.belt-track {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-}
 .connect-section {
   text-align: center;
   padding: 5rem 2rem;
   position: relative; /* or your custom theme */
+  
+
 }
 
 .connect-title {
@@ -437,10 +497,15 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
   font-weight: 600;
   margin-bottom: 2rem;
   color: #fff;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 33.5rem;
 }
 
 .connect-title span {
   color: #ff6600;
+  margin: 0 4px;
 }
 
 .character-social-container {
@@ -449,45 +514,27 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
   flex-direction: column;
   align-items: center;
 }
-
 .social-icons {
   display: flex;
-  flex-wrap: wrap;
+  margin-left:33rem;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  gap: 10px;
+  margin-top: 2rem;
 }
 
 .social-icons img {
   width: 40px;
   height: 40px;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
+/* Bounce + Glow on hover */
 .social-icons img:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
+  box-shadow: 0 0 4px #5b5ff3aa, 0 0 6px #00feba99;
+  border-radius: 15%;
 }
 
-.hoverboard-boy-container {
-  position: relative;
-}
-
-.hoverboard-boy {
-  width: 150px;
-  height: auto;
-  margin-top: 1rem;
-}
-
-
-.block {
-  width: 14px;
-  height: 24px;
-  border-radius: 3px;
-}
-
-.block.c1 { background-color: #4F46E5; }
-.block.c2 { background-color: #2EE6D6; }
-.block.c3 { background-color: #FF3B6F; }
     h2 {
       font-size:6rem;
       margin-bottom: 2.2rem;
@@ -517,6 +564,52 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
       font-size: 1rem;
       line-height: 1.6;
     }
+    /*
+  .footer {
+  background: rgba(9, 11, 14, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  padding: 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: inherit;
+  align-items: center;
+  justify-content: center;
+}
+
+.connect-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.connect-title span {
+  color: #ff6600;
+  margin: 0 4px;
+}
+
+.social-icons {
+  right:5rem;
+  display: flex;
+  justify-content: flex-start;
+  
+  gap: 1.5rem;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 4px #5b5ff3aa, 0 0 6px #00feba99;
+  border-radius: 15%;
+}*/
     #cursor-label {
  position: fixed;
  pointer-events: none;
@@ -534,7 +627,6 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
  max-width: 220px;
  margin-top: 12px; /* pushes it down from the cursor */
 }
-
 
   </style>
 </head>
@@ -567,7 +659,7 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
     <img src="images\WhatsApp Image 2025-07-27 at 19.30.54.jpeg" alt="Profile" class="profile-image" />
  </div>
  <div class="profile-info">
-  <h1>Hi, I'm Pranav</h1>
+  <h1 id="hiText"> <span>Hi</span>, I'm Pranav</h1>
   <p class="subtitle">Data Science | Core Java | Problem Solving</p>
   <div class="contact-info">
    <p>Email: <a href="mailto:pranav4330@gmail.com">pranav4330@gmail.com</a></p>
@@ -580,86 +672,35 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 
   <!-- About Me -->
   <div class="about-me" data-aos="fade-up">
-    <p>Finding stories between numbers and nuance <span class="highlight">since 2023</span>.</p>
+    <p>Finding stories between numbers<span class="highlight">since 2023</span>.</p>
     <p>Shaping ideas through <span class="highlight">data</span> and <span class="highlight">code</span>.</p>
   </div>
+<br>
+<br>
+<a href="#skills" class="scroll-down">
+  <span>&#x25BC;</span> <!-- Unicode Down Arrow -->
+</a>
 
-  <section class="skills-wheel" data-aos="fade-up">
-<div class="wheel-container">
- <div class="wheel-track">
-<div class="wheel-track">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-plain.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-plain.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-plain.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-plain.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-plain.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-plain.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" />
-
+<div class="toolbox-title">
+  ToolKit
 </div>
 
- <!-- Repeat or add more as you like -->
+
+  <section id="skills">
+    <div class="skills-grid">
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" /><span>JAVA</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" /><span>HTML5</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" /><span>CSS3</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" /><span>Python</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" /><span>R</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" /><span>Git</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" /><span>MySql</sapn></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" /><span>VS-Code</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-plain.svg" /><span>MatplotLib</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" /><span>Numpy</span></div>
+  <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" /><span>Pandas</span></div>
+
  </div>
-</div>
 </section>
 
 
@@ -669,6 +710,7 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 
 
   <!-- Projects Section -->
+ <section class="section">
   <p class="section-content">
   </p>
 
@@ -708,6 +750,7 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
   </div>
   <img src="images\glenn-carstens-peters-P1qyEf1g0HU-unsplash.jpg" alt="More Projects Preview">
 </div>
+</section>
 
 
 </section>
@@ -746,35 +789,32 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
   </section>
 
 
-  <section id="connect" class="connect-section">
+<!--
+<footer id="footer">
   <h2 class="connect-title">Coffee? <span>Code?</span> Collab?</h2>
-  
-  <div class="character-social-container">
-    <!-- Social icons around -->
     <div class="social-icons">
-      <a href="https://linkedin.com" target="_blank"><img src="icons/linkedin.svg" alt="LinkedIn" /></a>
-      <a href="https://x.com" target="_blank"><img src="icons/twitter.svg" alt="X (Twitter)" /></a>
-      <a href="https://stackoverflow.com" target="_blank"><img src="icons/stackoverflow.svg" alt="StackOverflow" /></a>
-      <a href="https://hackerrank.com" target="_blank"><img src="icons/hackerrank.svg" alt="HackerRank" /></a>
-      <a href="https://reddit.com" target="_blank"><img src="icons/reddit.svg" alt="Reddit" /></a>
-      <a href="https://discord.com" target="_blank"><img src="icons/discord.svg" alt="Discord" /></a>
-    </div>
-
-    <!-- Character in the center -->
-    <div class="hoverboard-boy-container">
-      <img src="images\boyIcon.png" alt="Boy on hoverboard" class="hoverboard-boy" />
-    </div>
+  <a href="https://www.linkedin.com/in/pranav-sharma-523005298/" target="_blank">
+    <img src="icons\LinkedIn_icon.svg" alt="LinkedIn" />
+  </a>
+  <a href ="https://www.kaggle.com/pranavsharma69" target="_blank">
+    <img src="icons\kaggle-svgrepo-com.svg" alt="Kaggle">
+  </a>
+  <a href="https://stackoverflow.com/users/28836166/pranav-sharma" target="_blank">
+    <img src="icons\icons8-stack-overflow.svg" alt="Stack Overflow" />
+  </a>
+  <a href="https://leetcode.com/u/SharmaPranav/" target="_blank">
+    <img src="icons\leetcode.svg" alt="LeetCode" />
+  </a>
+  <a href="https://x.com/PS_Shimlaite09" target="_blank">
+    <img src="icons\twitter.svg" alt="X" />
+  </a>
+  <a href="https://discord.com/channels/@me" target="_blank">
+    <img src="icons\discord.svg" alt="Discord" />
+  </a>
   </div>
-</section>
+</footer>
 
-
-  <button id="goUpBtn" aria-label="Go to Top">
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24">
-    <path d="M18 15L12 9L6 15" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
-
-
+-->
 
 
   <!-- AOS and Particles.js -->
@@ -824,6 +864,28 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
     });
   </script>
   <script>
+  const fonts = [
+    "sans-serif"
+  ];
+
+  let index = 0;
+setInterval(() => {
+  const span = document.querySelector('#hiText span');
+  if (span) {
+    span.style.fontFamily = fonts[index];
+    span.style.transform = "scale(1.15)";
+    span.style.transition = "all 0.3s ease";
+
+    setTimeout(() => {
+      span.style.transform = "scale(1)";
+    }, 300);
+
+    index = (index + 1) % fonts.length;
+  }
+}, 900);
+</script>
+
+  <script>
  const goUpBtn = document.getElementById("goUpBtn");
 
  window.onscroll = function () {
@@ -855,6 +917,23 @@ profilePic.addEventListener('mousemove', (e) => {
   cursorLabel.style.top = e.clientY + 20 + 'px';
 });
   };
+</script>
+<script>
+  const skillElements = document.querySelectorAll('.skill');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      } else {
+        entry.target.classList.remove('in-view'); // <-- reset when scrolled up
+      }
+    });
+  }, {
+    threshold: 0.3,
+  });
+
+  skillElements.forEach(el => observer.observe(el));
 </script>
  
 </body>
