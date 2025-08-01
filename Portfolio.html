@@ -48,7 +48,7 @@
 
 
     body {
-      background-color: #101010;
+      background-color: #000000;
       color: var(--text-color);
       overflow-x: hidden;
       padding: 3rem 6vw;
@@ -215,12 +215,13 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
     .about-me {
       max-width: 900px;
       margin: 1rem auto 4rem;
-      font-size: 2.29rem;
+      font-size:2.5rem;
       line-height: 1.7;
       color: gray;
       text-align: left;
       padding: 0.2rem;
       margin-bottom: 2rem;
+      margin-left:33rem;
 
     }
 
@@ -257,6 +258,23 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
   font-size: 6rem;
   margin: 2rem;
   margin-top:25rem;
+  color:#faf9f6
+}
+.project-title {
+  text-align: center;
+  font-family: 'VeganStyle', cursive;
+  font-size: 6rem;
+  margin: 2rem;
+  margin-top:-5rem;
+  color:#faf9f6
+}
+.certs-title{
+  text-align: center;
+  font-family: 'VeganStyle', cursive;
+  font-size: 6rem;
+  margin: 2rem;
+  margin-top: 5rem;
+  color:#faf9f6
 }
     #skills {
   background: #0111;
@@ -293,7 +311,7 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 .skill {
   background: #1a1a1a;
   border-radius: 10px;
-  padding: 20px;
+  padding: 15px;
   transition: transform 0.6s ease;
   border: 4px double grey;
   opacity: 0;
@@ -319,15 +337,6 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 .skill:nth-child(10).in-view { transition-delay: 1.8s; animation-delay:1.8s; }
 .skill:nth-child(11).in-view { transition-delay: 2.0s; animation-delay:2.0s; }
 
-/*@keyframes floatUpDown {
-  0%   { transform: translateY(0); }
-  15%  { transform: translateY(-2px); }
-  30%  { transform: translateY(-3.5px); }
-  50%  { transform: translateY(-5px); }
-  70%  { transform: translateY(-3.5px); }
-  85%  { transform: translateY(-2px); }
-  100% { transform: translateY(0); }
-}*/
 
 .skill img {
   width: 40px;
@@ -356,7 +365,7 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 .bg-datasci,
 .bg-gravity,
 .bg-more{
-  background: rgba(48, 58, 72, 0.25); /* semi-transparent version of #303A48 */
+  background: #0d0d0d; /* semi-transparent version of #303A48 */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px); /* for Safari */
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -472,6 +481,507 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 
 
 
+
+.trophy-reel {
+  background: transparent;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 30rem;
+  padding-top: 5rem;
+  padding-bottom: 30rem;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+
+.carousel-track {
+  display: flex;
+  gap: 3rem;
+  will-change: transform;
+}
+
+.trophy {
+  min-width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.trophy img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.95) contrast(1.1);
+}
+
+.trophy:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 13rem;
+}
+
+.explore-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  color: #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+  text-align: left;
+}
+
+.explore-card:hover {
+  transform: perspective(600px) rotateX(2deg) rotateY(2deg);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.icon-bubble {
+  width: 3rem;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.show-more {
+  background: rgba(255, 255, 255, 0.03);
+  text-align: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.show-more:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.03);
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.blog-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  color: #fff;
+  padding: 1.2rem 1rem;
+  border-left: 4px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  transition: background 0.3s ease;
+}
+
+.blog-entry:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.blog-marker {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.blog-content h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #f2f2f2;
+}
+
+.blog-content p {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  color: #ccc;
+}
+
+
+
+
+
+
+
+#visitor-slider {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.slider-container {
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.slide.active {
+  display: flex;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #ccc;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+button:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.back-button {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back-button:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.role-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  color: #eee;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  animation: float 3s ease-in-out infinite;
+}
+
+.role-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.role-btn.selected {
+  background: rgba(95, 158, 160, 0.2); /* matte teal shade */
+  border-color: #5f9ea0;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(95, 158, 160, 0.2);
+  transform: scale(1.05);
+}
+
+
+
+
+.more-button {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #5f9ea0;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.more-button:hover {
+  color: #2f6f72;
+}
+
+
+
+
+
+
+.add-custom-role {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem auto 0;
+}
+
+#custom-role-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background: #1e1e1e;
+  border: 1px solid #3c3c3c;
+  border-radius: 8px;
+  color: #fff;
+}
+
+#custom-role-input:focus {
+  outline: none;
+  border-color: #5f9ea0;
+  background: #252525;
+}
+
+#add-custom-role {
+  background: #5f9ea0;
+  color: white;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#add-custom-role:hover {
+  background: #2f6f72;
+}
+
+#toast-message {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: #5f9ea0;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.4s ease;
+}
+
+
+
+
+
+
+.message-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.message-section textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  background: #1e1e1e;
+  border: 1px solid #3c3c3c;
+  border-radius: 10px;
+  color: #fff;
+  resize: vertical;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.message-section textarea:focus {
+  outline: none;
+  border-color: #5f9ea0;
+  background: #252525;
+}
+
+.msg-note {
+  margin-top: 0.5rem;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+
+
+
+
+
+
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.nav-buttons button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #ccc;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-buttons button:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+
+
+.role-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+}
+.roles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.step-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #bbb;
+  margin: 0 5px;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #333;
+}
+
+.postit-wall-link {
+  display: block;
+  margin-top: 2rem;
+  color: #5f9ea0;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.postit-wall-link:hover {
+  color: #2f6f72;
+  text-decoration: underline;
+}
+.name-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+}
+
+
+
+.name-section input {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.5rem;
+  background: #1e1e1e;
+  border: 1px solid #3c3c3c;
+  border-radius: 8px;
+  color: #fff;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.name-section input:focus {
+  outline: none;
+  border-color: #5f9ea0;
+  background: #252525;
+}
+
+
+
+
+
+
+
+
     section {
       padding: 3rem 2rem;
       max-width: 1400px;
@@ -564,52 +1074,7 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
       font-size: 1rem;
       line-height: 1.6;
     }
-    /*
-  .footer {
-  background: rgba(9, 11, 14, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  width: 100%;
-  padding: 5rem;
-  text-align: center;
-  display: flex;
-  flex-direction: inherit;
-  align-items: center;
-  justify-content: center;
-}
 
-.connect-title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 2rem;
-}
-
-.connect-title span {
-  color: #ff6600;
-  margin: 0 4px;
-}
-
-.social-icons {
-  right:5rem;
-  display: flex;
-  justify-content: flex-start;
-  
-  gap: 1.5rem;
-}
-
-.social-icons img {
-  width: 40px;
-  height: 40px;
-  transition: all 0.3s ease;
-}
-
-.social-icons img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 4px #5b5ff3aa, 0 0 6px #00feba99;
-  border-radius: 15%;
-}*/
     #cursor-label {
  position: fixed;
  pointer-events: none;
@@ -628,6 +1093,54 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
  margin-top: 12px; /* pushes it down from the cursor */
 }
 
+
+.connect-section {
+  background-color: #0d1117;
+  color: #ccc;
+  padding: 2rem 1rem;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.connect-section h2 {
+  font-size: 2.5rem;
+  color: #faf9f6;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: #ccc;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #5f9ea0;
+  transform: scale(1.2);
+}
+
+.connect-section .copyright {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 1.5rem;
+}
+
+
+
+
+
   </style>
 </head>
 <body>
@@ -635,6 +1148,7 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
     <div class="top-buttons">
     <a href="#projects">Projects</a>
  <a href="#certificates">Certificates</a>
+ <a href="#learning">Learning</a>
  <a href="#about">About Me</a>
   <a href="https://github.com/Codaix" target="_blank">GitHub</a>
  <a href="resume.pdf" class="resume-btn" target="_blank">Resume</a>
@@ -663,7 +1177,7 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
   <p class="subtitle">Data Science | Core Java | Problem Solving</p>
   <div class="contact-info">
    <p>Email: <a href="mailto:pranav4330@gmail.com">pranav4330@gmail.com</a></p>
-      <p>Based In Punjab, India</p>
+      <p>Based In India</p>
   </div>
  </div>
 </div>
@@ -672,7 +1186,7 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 
   <!-- About Me -->
   <div class="about-me" data-aos="fade-up">
-    <p>Finding stories between numbers<span class="highlight">since 2023</span>.</p>
+    <p>Finding stories between numbers <span class="highlight">since 2023</span>.</p>
     <p>Shaping ideas through <span class="highlight">data</span> and <span class="highlight">code</span>.</p>
   </div>
 <br>
@@ -681,12 +1195,12 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
   <span>&#x25BC;</span> <!-- Unicode Down Arrow -->
 </a>
 
-<div class="toolbox-title">
-  ToolKit
-</div>
 
 
   <section id="skills">
+    <div class="toolbox-title">
+  ToolKit
+</div>
     <div class="skills-grid">
   <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" /><span>JAVA</span></div>
   <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" /><span>HTML5</span></div>
@@ -710,9 +1224,12 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 
 
   <!-- Projects Section -->
- <section class="section">
+ <section id="projects" class="section">
   <p class="section-content">
   </p>
+<div class="project-title">
+  Build Board
+</div>
 
   <!-- Data Science Wide Card -->
 <div class="project-card-wide bg-datasci">
@@ -755,66 +1272,169 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' hei
 
 </section>
 
-    <section id="certificates" class="section" data-aos="fade-up">
-      <h2>Achievements</h2>
-      <p class="section-content">
-        I have completed various courses and certifications to enhance my skills in web development and programming.
-      </p>
-      <ul>
-        <li><a href="https://example.com/certificate2" target="_blank">Java Programming Certification</a></li>
-        <li><a href="https://example.com/certificate2" target="_blank">Java DSA Certification</a></li>
-      </ul>
-      </section>
-      <section id="learning" class="section" data-aos="fade-up">
- <h2>Currently Exploring</h2>
- <ul>
-  <li>System Design Principles (Scalability & Architecture)</li>
-  <li>Open Source Contribution - Preparing for Hacktoberfest</li>
-  <li>Advanced Java (JDBC, Threads, JavaFX)</li>
- </ul>
-</section>
-<section id="blogs" class="section" data-aos="fade-up">
- <h2>Writings & Blogs</h2>
- <ul>
-  <li><a href="#" target="_blank">Why I Chose LWJGL for a Physics Simulation</a></li>
-  <li><a href="#" target="_blank">My Java DSA Journey - What Helped Me Most</a></li>
- </ul>
-</section>
-
-      <section id="about" class="section" data-aos="fade-up">
-        <h2>About Me</h2>
-        <p class="section-content">
-          I am a frontend developer with a passion for creating clean, efficient, and user-friendly web applications. I enjoy learning new technologies and continuously improving my skills.
-        </p>
-  </section>
 
 
-<!--
-<footer id="footer">
-  <h2 class="connect-title">Coffee? <span>Code?</span> Collab?</h2>
-    <div class="social-icons">
-  <a href="https://www.linkedin.com/in/pranav-sharma-523005298/" target="_blank">
-    <img src="icons\LinkedIn_icon.svg" alt="LinkedIn" />
-  </a>
-  <a href ="https://www.kaggle.com/pranavsharma69" target="_blank">
-    <img src="icons\kaggle-svgrepo-com.svg" alt="Kaggle">
-  </a>
-  <a href="https://stackoverflow.com/users/28836166/pranav-sharma" target="_blank">
-    <img src="icons\icons8-stack-overflow.svg" alt="Stack Overflow" />
-  </a>
-  <a href="https://leetcode.com/u/SharmaPranav/" target="_blank">
-    <img src="icons\leetcode.svg" alt="LeetCode" />
-  </a>
-  <a href="https://x.com/PS_Shimlaite09" target="_blank">
-    <img src="icons\twitter.svg" alt="X" />
-  </a>
-  <a href="https://discord.com/channels/@me" target="_blank">
-    <img src="icons\discord.svg" alt="Discord" />
-  </a>
+
+
+
+<section id="certificates" class="trophy-reel">
+  <div class="certs-title">
+  Certifications
+</div>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <div class="trophy">
+        <img src="images/certificate1.jpg" alt="Certificate 1" />
+      </div>
+      <div class="trophy">
+        <img src="images/certificate2.jpg" alt="Certificate 2" />
+      </div>
+      <div class="trophy">
+        <img src="images/certificate3.jpg" alt="Certificate 3" />
+      </div>
+      <div class="trophy">
+        <img src="images/certificate1.jpg" alt="Certificate 1" />
+      </div>
+      <div class="trophy">
+        <img src="images/certificate2.jpg" alt="Certificate 2" />
+      </div>
+      <div class="trophy">
+        <img src="images/certificate3.jpg" alt="Certificate 3" />
+      </div>
+      <!-- Add more as needed -->
+    </div>
   </div>
-</footer>
+</section>
 
--->
+
+
+
+
+<section id="learning" class="section">
+  <h2>Ongoing Explorations</h2>
+  <div class="explore-grid">
+    <!-- Row 1 -->
+    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">📐</div><h3>System Design</h3><p>Scalability & Architecture</p></div>
+    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">🌍</div><h3>Open Source</h3><p>Hacktoberfest & OSS</p></div>
+    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">☕</div><h3>Advanced Java</h3><p>JDBC, Threads, JavaFX</p></div>
+
+    <!-- Row 2 -->
+    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">🧪</div><h3>Performance</h3><p>Profiling & Optimization</p></div>
+    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">📊</div><h3>Dev Analytics</h3><p>GitHub stats, insights</p></div>
+    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">🧱</div><h3>Design Patterns</h3><p>SOLID, Factory, Builder</p></div>
+
+    <!-- Row 3 -->
+    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">🔐</div><h3>Web Security</h3><p>JWT, XSS, CORS</p></div>
+    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">🧠</div><h3>AI in Java</h3><p>ML libraries, experiments</p></div>
+    <a href="/explorations.html" class="explore-card show-more">
+      <img src="images/system-design.jpg" alt="System Design">
+      <div class="icon-bubble">➕</div>
+      <h3>Show More →</h3>
+      <p>View all ongoing explorations</p>
+    </a>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section id="visitor-slider" class="section" data-aos="fade-up">
+  <h2>Leave your footprint</h2>
+
+  <div class="slider-container">
+    <!-- Step 1 -->
+    <div class="slide active" id="step-1">
+  <div class="name-section">
+    <input type="text" id="user-name" placeholder="What's your name?" autocomplete="off" />
+  </div>
+  <button id="to-step-2">Next -></button>
+</div>
+
+ <!-- Step 2 -->
+<div class="slide" id="step-2">
+  <h3>Your Vibe?</h3>
+
+  <div class="role-section">
+    <div class="roles" id="main-roles">
+      <button class="role-btn" data-role="Developer">👨‍💻 Developer</button>
+      <button class="role-btn" data-role="Data Scientist">🧠 Data Scientist</button>
+      <button class="role-btn" data-role="Designer">🎨 Designer</button>
+      <button class="role-btn" data-role="Learner">📚 Learner</button>
+      <button class="role-btn" data-role="Mentor">🧓 Mentor</button>
+    </div>
+
+    <div id="more-roles" class="roles" style="display: none;">
+      <button class="role-btn" data-role="Researcher">🔬 Researcher</button>
+      <button class="role-btn" data-role="Engineer">⚙️ Engineer</button>
+      <button class="role-btn" data-role="Blogger">✍️ Blogger</button>
+      <button class="role-btn" data-role="Enthusiast">🔥 Enthusiast</button>
+      
+  <div class="add-custom-role">
+  <input type="text" id="custom-role-input" placeholder="Add your own role..." />
+  <button id="add-custom-role">Add your Role</button>
+</div>
+    </div>
+<div id="hidden-roles" style="display: none;"></div>
+    <button id="toggle-more" class="more-button">+ More Roles</button>
+
+    <div class="nav-buttons">
+      <button id="back-to-1" class="back-button">⬅ Back</button>
+      <button id="to-step-3">Next ➡</button>
+    </div>
+    
+  </div>
+</div>
+
+<div class="slide" id="step-3">
+  <h3 style="margin-bottom: 1rem;">💬 Leave a Message</h3>
+
+  <div class="message-section">
+    <textarea id="user-msg" placeholder="Write your thoughts, feedback, or a shoutout here..." rows="6"></textarea>
+    <small class="msg-note">* Optional – leave it blank if you want!</small>
+  </div>
+
+  <div class="nav-buttons">
+    <button id="back-to-2" class="back-button">⬅ Back</button>
+    <button id="submit-note">📨 Submit Note</button>
+  </div>
+</div>
+
+
+    <!-- Dots -->
+    <div class="step-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <!-- Wall link -->
+    <a href="postits.html" class="postit-wall-link">🔗 View the Memory Wall</a>
+  </div>
+</section>
+
+
+<section class="section">
+  <h2>Let's Connect</h2>
+  <div class="social-links">
+    <a href="https://github.com/Codaix" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://linkedin.com/in/pranavsharma4330" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" title="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </div>
+  <p class="copyright">
+    &copy; प्रणव शर्मा. All rights reserved.
+  </p>
+</section>
+
+
 
 
   <!-- AOS and Particles.js -->
@@ -934,8 +1554,215 @@ profilePic.addEventListener('mousemove', (e) => {
   });
 
   skillElements.forEach(el => observer.observe(el));
+  </script>
+
+
+
+
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const container = document.querySelector('.carousel-container');
+
+  let position = 0;
+  let speed = 2.3; // pixels per frame
+  let slowSpeed = 0.2;
+  let normalSpeed = 2.3;
+
+  // Clone items to simulate infinite scroll
+  track.innerHTML += track.innerHTML;
+
+  function animate() {
+    position -= speed;
+    if (position <= -track.scrollWidth / 2) {
+      position = 0;
+    }
+    track.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animate);
+  }
+
+  container.addEventListener('mouseenter', () => {
+    speed = slowSpeed;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    speed = normalSpeed;
+  });
+
+  animate();
 </script>
- 
+
+
+
+
+
+<script>
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+function goToSlide(index) {
+  slides.forEach((s, i) => s.classList.toggle("active", i === index));
+  dots.forEach((d, i) => d.classList.toggle("active", i === index));
+}
+
+// Step 1 → Step 2
+document.getElementById("to-step-2").addEventListener("click", () => {
+  const name = document.getElementById("user-name").value.trim();
+  if (name) {
+    goToSlide(1);
+  } else {
+    alert("Please enter your name!");
+  }
+});
+
+// Multi-select role buttons
+document.querySelectorAll(".roles button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("selected");
+  });
+});
+
+// Step 2 → Step 3
+document.getElementById("to-step-3").addEventListener("click", () => {
+  const selectedRoles = document.querySelectorAll(".roles button.selected, #hidden-roles button.selected");
+  if (selectedRoles.length === 0) {
+    alert("Please select at least one role!");
+  } else {
+    goToSlide(2);
+  }
+});
+
+// Step 3 → Submit
+document.getElementById("submit-note").addEventListener("click", () => {
+  const name = document.getElementById("user-name").value.trim();
+  const message = document.getElementById("user-msg").value.trim();
+  const roleBtns = document.querySelectorAll(".roles button.selected, #hidden-roles button.selected");
+  const roles = Array.from(roleBtns).map(btn => btn.dataset.role).join(", ");
+
+  if (!name || !roles) {
+    return alert("Missing name or role!");
+  }
+
+  const note = {
+    name,
+    roles,
+    message,
+    date: new Date().toLocaleDateString()
+  };
+
+  let notes = JSON.parse(localStorage.getItem("visitorNotes") || "[]");
+  notes.push(note);
+  localStorage.setItem("visitorNotes", JSON.stringify(notes));
+
+  alert("✅ Note submitted! View it on the wall below.");
+
+  // Reset
+  document.getElementById("user-name").value = "";
+  document.getElementById("user-msg").value = "";
+  document.querySelectorAll(".roles button").forEach(b => b.classList.remove("selected"));
+  goToSlide(0);
+});
+
+// Back buttons
+document.getElementById("back-to-1").addEventListener("click", () => goToSlide(0));
+document.getElementById("back-to-2").addEventListener("click", () => goToSlide(1));
+
+// Pressing Enter in custom input triggers Add Role
+document.getElementById("custom-role-input").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    document.getElementById("add-custom-role").click();
+    document.getElementById("to-step-3").click(); // proceed only after role is added
+  }
+});
+
+// Handle Enter key navigation
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && e.target.tagName !== "TEXTAREA") {
+    const activeSlide = document.querySelector(".slide.active");
+
+    // ✅ prevent global nav if inside custom role input
+    if (e.target.id === "custom-role-input") {
+      return; // don't do anything else — only add role
+    }
+
+    if (activeSlide.id === "step-1") {
+      document.getElementById("to-step-2").click();
+    } else if (activeSlide.id === "step-2") {
+      document.getElementById("to-step-3").click();
+    } else if (activeSlide.id === "step-3") {
+      document.getElementById("submit-note").click();
+    }
+  }
+});
+
+// Show/hide more roles
+document.getElementById("toggle-more").addEventListener("click", () => {
+  const more = document.getElementById("more-roles");
+  if (more.style.display === "none") {
+    more.style.display = "flex";
+    document.getElementById("toggle-more").textContent = "- Fewer Roles";
+  } else {
+    more.style.display = "none";
+    document.getElementById("toggle-more").textContent = "+ More Roles";
+  }
+});
+
+// Show popup in top-right
+function showToast(message) {
+  let toast = document.getElementById("toast-message");
+
+  // Reuse existing toast element if present
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "toast-message";
+    document.body.appendChild(toast);
+  }
+
+  toast.textContent = message;
+  toast.style.opacity = "1";
+
+  // Hide after 5 seconds
+  setTimeout(() => {
+    toast.style.opacity = "0";
+  }, 5000);
+}
+// Add custom role
+document.getElementById("add-custom-role").addEventListener("click", () => {
+  const input = document.getElementById("custom-role-input");
+  const role = input.value.trim();
+
+  if (!role) return;
+
+  // Check for duplicate role in existing selected buttons (visible or hidden)
+  const allSelected = document.querySelectorAll(".roles button.selected, #hidden-roles button.selected");
+  const roleExists = Array.from(allSelected).some(btn => btn.dataset.role.toLowerCase() === role.toLowerCase());
+
+  if (roleExists) {
+    showToast("⚠️ Role already selected!");
+    input.value = "";
+    return;
+  }
+
+  // Add new hidden selected role
+  const customBtn = document.createElement("button");
+  customBtn.classList.add("selected");
+  customBtn.dataset.role = role;
+  customBtn.style.display = "none";
+  document.getElementById("hidden-roles").appendChild(customBtn);
+
+  input.value = "";
+  showToast("✅ Role added!");
+});
+
+
+</script>
+
+
+
+
+
+
 </body>
 </html>
 
