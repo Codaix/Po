@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Roboto+Mono&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     @font-face {
   font-family: 'VeganStyle';
@@ -1137,7 +1139,104 @@ button:hover {
   margin-top: 1.5rem;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 2rem 0;
+}
 
+.social-links a {
+  font-size: 2.8rem;
+  color: #faf9f6;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+  color: #00aced; /* Change this color to fit your palette */
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section {
+  padding: 12rem 2rem;
+  text-align: center;
+}
+
+.copyright {
+  margin-top: 7rem;
+  margin-bottom: -10rem;
+  font-size: 1.1rem;
+  color: #aaa;
+}
+.visitor-form{
+padding: 3rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 10rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      text-align: center;
+}
+.footprint-title{
+  font-family: 'VeganStyle', cursive;
+  text-align: center;
+  font-size: 6rem;
+  margin: 2rem;
+  margin-top: -8rem;
+  color:#faf9f6
+}
+
+
+
+.exploration-title {
+  font-family: 'VeganStyle', cursive;
+  font-size: 6rem;
+  margin: 2rem 0;
+  color: #faf9f6;
+}
+.system-bg {
+  background-image: url('images/bg-system.jpg');
+  background-size: cover;
+  background-position: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/bg-system.jpg');
+}
+
+
+
+#goTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  font-size: 2rem;
+  padding: 0.7rem 1.2rem;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 1650%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+#goTopBtn:hover {
+  background-color: #333;
+  transform: scale(1.1);
+}
+
+#goTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
 
 
 
@@ -1277,7 +1376,7 @@ button:hover {
 
 
 
-<section id="certificates" class="trophy-reel">
+<section id="certificates" class="section">
   <div class="certs-title">
   Certifications
 </div>
@@ -1311,23 +1410,22 @@ button:hover {
 
 
 <section id="learning" class="section">
-  <h2>Ongoing Explorations</h2>
+  <h2 class="exploration-title">Ongoing Explorations</h2>
   <div class="explore-grid">
     <!-- Row 1 -->
-    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">📐</div><h3>System Design</h3><p>Scalability & Architecture</p></div>
-    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">🌍</div><h3>Open Source</h3><p>Hacktoberfest & OSS</p></div>
-    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">☕</div><h3>Advanced Java</h3><p>JDBC, Threads, JavaFX</p></div>
+    <div class="explore-card" style ="background-image: url('images\BG_ICONS.jpg'); background-size: cover; background-position: center;"><div class="icon-bubble">📐</div><h3>System Design</h3><p>Scalability & Architecture</p></div>
+    <div class="explore-card" style ="background-image: url('images\BG_ICONS.jpg'); background-size: cover; background-position: center;"><div class="icon-bubble">🌍</div><h3>Open Source</h3><p>Hacktoberfest & OSS</p></div>
+    <div class="explore-card" style ="background-image: url('images\BG_ICONS.jpg'); background-size: cover; background-position: center;"><div class="icon-bubble">☕</div><h3>Advanced Java</h3><p>JDBC, Threads, JavaFX</p></div>
 
     <!-- Row 2 -->
-    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">🧪</div><h3>Performance</h3><p>Profiling & Optimization</p></div>
-    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">📊</div><h3>Dev Analytics</h3><p>GitHub stats, insights</p></div>
-    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">🧱</div><h3>Design Patterns</h3><p>SOLID, Factory, Builder</p></div>
+    <div class="explore-card" style ="background-image: url('images\BG_ICONS.jpg'); background-size: cover; background-position: center;"><div class="icon-bubble">🧪</div><h3>Performance</h3><p>Profiling & Optimization</p></div>
+    <div class="explore-card" style ="background-image: url('images\BG_ICONS.jpg'); background-size: cover; background-position: center;"><div class="icon-bubble">📊</div><h3>Dev Analytics</h3><p>GitHub stats, insights</p></div>
+    <div class="explore-card" style ="background-image: url('images\BG_ICONS.jpg'); background-size: cover; background-position: center;"><div class="icon-bubble">🧱</div><h3>Design Patterns</h3><p>SOLID, Factory, Builder</p></div>
 
     <!-- Row 3 -->
-    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">🔐</div><h3>Web Security</h3><p>JWT, XSS, CORS</p></div>
-    <div class="explore-card"><img src="images/system-design.jpg" alt="System Design"><div class="icon-bubble">🧠</div><h3>AI in Java</h3><p>ML libraries, experiments</p></div>
+    <div class="explore-card" style ="background-image: url('images\BG_ICONS.jpg'); background-size: cover; background-position: center;"><div class="icon-bubble">🔐</div><h3>Web Security</h3><p>JWT, XSS, CORS</p></div>
+    <div class="explore-card" style ="background-image: url('images\BG_ICONS.jpg'); background-size: cover; background-position: center;"><div class="icon-bubble">🧠</div><h3>AI in Java</h3><p>ML libraries, experiments</p></div>
     <a href="/explorations.html" class="explore-card show-more">
-      <img src="images/system-design.jpg" alt="System Design">
       <div class="icon-bubble">➕</div>
       <h3>Show More →</h3>
       <p>View all ongoing explorations</p>
@@ -1341,8 +1439,8 @@ button:hover {
 
 
 
-<section id="visitor-slider" class="section" data-aos="fade-up">
-  <h2>Leave your footprint</h2>
+ <section id="visitor-slider" class="visitor-form" data-aos="fade-up">
+  <h2 class="footprint-title">Leave your footprint</h2>
 
   <div class="slider-container">
     <!-- Step 1 -->
@@ -1417,23 +1515,27 @@ button:hover {
 
 
 <section class="section">
-  <h2>Let's Connect</h2>
-  <div class="social-links">
-    <a href="https://github.com/Codaix" target="_blank" title="GitHub">
-      <i class="fab fa-github"></i>
+
+
+  <h2>Coffee. Code. Connect.</h2>
+    <div class="social-links">
+  <a href="https://x.com/PS_Shimlaite09" target="_blank" title="X">
+      <i class="fab fa-x-twitter"></i>
     </a>
-    <a href="https://linkedin.com/in/pranavsharma4330" target="_blank" title="LinkedIn">
+  
+    <a href="https://stackoverflow.com/users/28836166/pranav-sharma" target="_blank" title="LeetCode">
+      <i class="fab fa-stack-overflow"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/pranav-sharma-523005298/" target="_blank" title="LinkedIn">
       <i class="fab fa-linkedin"></i>
     </a>
-    <a href="https://twitter.com" target="_blank" title="Twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
+    
   </div>
   <p class="copyright">
     &copy; प्रणव शर्मा. All rights reserved.
   </p>
 </section>
-
+<button id="goTopBtn" title="Go to top">↑</button>
 
 
 
@@ -1757,7 +1859,24 @@ document.getElementById("add-custom-role").addEventListener("click", () => {
 
 
 </script>
+<script>
+  const goTopBtn = document.getElementById("goTopBtn");
 
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      goTopBtn.classList.add("show");
+    } else {
+      goTopBtn.classList.remove("show");
+    }
+  });
+
+  goTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
 
 
 
@@ -1765,17 +1884,3 @@ document.getElementById("add-custom-role").addEventListener("click", () => {
 
 </body>
 </html>
-
-<!--
-1. Remove the boy..
-2. make the social networking apps more interactive
-3. coffee code collab should be in middle
-4. the skill-wheel should be replaced by a more aesthetic and cleaner 
-version of showcasing the skills
-5. Get  better font styles
-6. Add achievements and currently exploring areas.
-7. modify the writing and blog section
-8. update the buttons
-9. get a resume
-10. clean the code
--->
