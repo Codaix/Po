@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<style>
+    :root {
+        --bg-color: white;
+        --text-color: black;
+        --accent-color: red;
+        --circle-color: skyblue;
+        --button-bg: white;
+        --button-icon: black;
+    }
+
+    body.dark {
+        --bg-color: #121212;
+        --text-color: #f5f5f5;
+        --accent-color: #ff4d4d;
+        --circle-color: #3a86ff;
+        --button-bg: #1e1e1e;
+        --button-icon: white;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Theme Toggle Icon Button */
+    .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: var(--button-bg);
+        color: var(--button-icon);
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .theme-toggle svg {
+        width: 22px;
+        height: 22px;
+        fill: var(--button-icon);
+        transition: fill 0.3s;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 150px;
+        padding: 40px 20px;
+        padding-right: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 1.2rem;
+        padding-left: 100px;
+        text-align: center;
+        background-color: var(--bg-color);
+        transition: background-color 0.3s;
+    }
+
+    .logo {
+        font-weight: bold;
+        font-size: 15rem;
+    }
+
+    .logo span {
+        color: var(--accent-color);
+    }
+
+    .nav {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 55px;
+        padding-left: 100px;
+        font-size: 3rem;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    /* Content Area */
+    .content {
+        flex: 1;
+        display: flex;
+        padding: 40px;
+        padding-left: 300px;
+        padding-top: 250px;
+        gap: 40px;
+    }
+
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .text-section {
+        max-width: 600px;
+        font-size: 1.5rem;
+    }
+
+    .text-section h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .text-section p {
+        line-height: 1.6;
+    }
+
+    .text-section a {
+        color: var(--text-color);
+        text-decoration: underline;
+        transition: color 0.3s;
+    }
+
+    /* Favorite chips section */
+    .chips {
+        display: flex;
+        gap: 50px;
+        margin-top: 30px;
+        font-size: 0.9rem;
+    }
+
+    /* Fixed message button */
+    .message-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--button-bg);
+        color: var(--button-icon);
+        padding: 10px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Circle text */
+    .circle-text {
+        font-weight: bold;
+        font-size: 10rem;
+        position: relative;
+        display: inline-block;
+    }
+
+    .circle-text::before {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: var(--circle-color);
+        border-radius: 50%;
+        left: -15px;
+        top: 6px;
+        z-index: -1;
+        transition: background-color 0.3s;
+    }
+</style>
+</head>
+<body>
+
+
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="logo">PS<span>.</span></div>
+    <div class="nav">
+        <a href="#">work</a>
+        <a href="Portfolio.html" class="active">portfolio</a>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <div class="profile-pic">
+        <img src="images/boyIcon.png" alt="Profile Picture">
+    </div>
+    <div class="text-section">
+        <div class="circle-text">about</div>
+        <h1>Sup! My name is Pranav</h1>
+        <p>
+            Let’s talk about building things — sometimes it’s code, sometimes it’s design, sometimes it’s both at once. I’m all about taking ideas from “hmm, maybe…” to “oh wow, it works!” Whether it’s a dynamic website, an interactive portfolio element, or a little experimental project, I like finding clever ways to make stuff click.
+        </p>
+        <p>
+            But let’s also talk about problem-solving 💡. For me, it’s about breaking challenges down, finding patterns, and shaping solutions that actually make sense for the people who use them. I believe in experimenting fast, testing early, and making every iteration better than the last — whether that’s a design layout or a chunk of C++ code.
+        </p>
+        <p>
+            <a href="#">email</a>   
+            <a href="https://www.linkedin.com/in/pranav-sharma-523005298/">linkedin</a>
+        </p>
+        <div class="chips">
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Node.js</span>
+            <span>CSS</span>
+            <span>HTML</span>   
+        </div>
+    </div>
+</div>
+
+
+<!-- Fixed Message Button -->
+<a href="#" class="message-btn">Message</a>
+
+<script>
+    const themeBtn = document.getElementById("themeBtn");
+    const moonIcon = document.getElementById("moonIcon");
+    const sunIcon = document.getElementById("sunIcon");
+
+    themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        const darkMode = document.body.classList.contains("dark");
+
+        moonIcon.style.display = darkMode ? "none" : "block";
+        sunIcon.style.display = darkMode ? "block" : "none";
+
+    });
+    </script>
+<script>
+  const btn = document.getElementById('themeBtn');
+  const moon = document.getElementById('moonIcon');
+  const sun = document.getElementById('sunIcon');
+
+  // initialize based on saved preference or system (optional)
+  const saved = localStorage.getItem('theme'); // 'dark' or 'light' or null
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved === 'dark' || (saved === null && prefersDark)) {
+    document.body.classList.add('dark');
+    moon.classList.replace('icon-visible','icon-hidden');
+    sun.classList.replace('icon-hidden','icon-visible');
+  } else {
+    document.body.classList.remove('dark');
+    moon.classList.replace('icon-hidden','icon-visible');
+    sun.classList.replace('icon-visible','icon-hidden');
+  }
+
+  btn.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark');
+    // swap icons with smooth classes
+    if (isDark) {
+      moon.classList.replace('icon-visible','icon-hidden');
+      sun.classList.replace('icon-hidden','icon-visible');
+      localStorage.setItem('theme','dark');
+    } else {
+      moon.classList.replace('icon-hidden','icon-visible');
+      sun.classList.replace('icon-visible','icon-hidden');
+      localStorage.setItem('theme','light');
+    }
+  });
+ </script>
+
+</body>
+</html>
