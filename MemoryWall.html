@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Memory Wall</title>
+<style>
+  body {
+    margin: 0;
+    padding: 40px;
+    background: #f9f5e3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  .memory-wall {
+    position: relative;
+    width: 900px;
+    min-height: 600px;
+    background: #f7f1c9 url('https://cdn.jsdelivr.net/gh/ashleydw/light-paper-texture@1.0/light-paper-texture.png') repeat;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    overflow: auto;
+  }
+
+  .note {
+    position: absolute;
+    width: 160px;
+    min-height: 140px;
+    background: #fffb7d;
+    box-shadow: 4px 6px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    user-select: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: default;
+  }
+  .note:hover {
+    transform: scale(1.07) rotate(0deg);
+    box-shadow: 8px 12px 20px rgba(0,0,0,0.3);
+    z-index: 10;
+  }
+
+  .pin {
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle at 50% 50%, #ff4d4d, #b30000);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    box-shadow: 0 0 6px rgba(255, 0, 0, 0.6);
+  }
+
+  .note-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+  .note-role {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="memory-wall" id="memoryWall">
+  <!-- Sticky notes will be inserted here -->
+</div>
+
+<script>
+  // Load footprints from localStorage
+  const footprints = JSON.parse(localStorage.getItem('footprints') || '[]');
+  const wall = document.getElementById('memoryWall');
+
+  // Helper to get random position and rotation for scattered effect
+  function getRandomPositionAndRotation() {
+    const maxWidth = wall.clientWidth - 180; // note width + margin
+    const maxHeight = wall.clientHeight - 180; // note height + margin
+    const top = Math.floor(Math.random() * maxHeight);
+    const left = Math.floor(Math.random() * maxWidth);
+    const rotate = (Math.random() * 14) - 7; // -7deg to +7deg
+    return {top, left, rotate};
+  }
+
+  footprints.forEach(fp => {
+    const note = document.createElement('div');
+    note.classList.add('note');
+    const {top, left, rotate} = getRandomPositionAndRotation();
+    note.style.top = `${top}px`;
+    note.style.left = `${left}px`;
+    note.style.transform = `rotate(${rotate}deg)`;
+
+    // Add pin
+    const pin = document.createElement('div');
+    pin.classList.add('pin');
+    note.appendChild(pin);
+
+    // Add content
+    const header = document.createElement('div');
+    header.classList.add('note-header');
+    header.textContent = fp.name;
+
+    const role = document.createElement('div');
+    role.classList.add('note-role');
+    role.textContent = fp.role || 'Visitor';
+
+    const message = document.createElement('div');
+    message.textContent = fp.message || 'No message left.';
+
+    note.appendChild(header);
+    note.appendChild(role);
+    note.appendChild(message);
+
+    wall.appendChild(note);
+  });
+
+  // Optional: if no notes, show a message
+  if (footprints.length === 0) {
+    wall.innerHTML = '<p style="color:#777; font-style:italic;">No footprints yet. Be the first to leave one!</p>';
+  }
+</script>
+
+</body>
+</html>
